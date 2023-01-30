@@ -1,6 +1,6 @@
 # expenses_proj
 
-A new Flutter project.
+A Personal Expenses app, that functions on both IOS and Android.
 
 ## Getting Started
 
