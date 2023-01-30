@@ -22,9 +22,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.purple,
-        accentColor: Colors.amber,
-        errorColor: Colors.red,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               titleLarge: TextStyle(
@@ -41,6 +38,10 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+            .copyWith(primary: Colors.purple)
+            .copyWith(secondary: Colors.amber)
+            .copyWith(error: Colors.red),
       ),
       title: 'Despesas Pessoais',
       home: MyHomepage(),
@@ -117,6 +118,7 @@ class _MyHomepageState extends State<MyHomepage> {
 
   @override
   Widget build(BuildContext context) {
+    print('build() MyHomePageState');
     final mediaQuery = MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
     final PreferredSizeWidget appBar = Platform.isIOS
