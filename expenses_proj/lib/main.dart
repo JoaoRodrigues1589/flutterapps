@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
             .copyWith(secondary: Colors.amber)
             .copyWith(error: Colors.red),
       ),
-      title: 'Despesas Pessoais',
       home: MyHomepage(),
     );
   }
