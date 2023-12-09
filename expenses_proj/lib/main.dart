@@ -8,14 +8,8 @@ import './widgets/transaction_list.dart';
 import './models/transaction.dart';
 import './widgets/chart.dart';
 
-void main() => {
-      // WidgetsFlutterBinding.ensureInitialized(),
-      // SystemChrome.setPreferredOrientations([
-      //   DeviceOrientation.portraitUp,
-      //   DeviceOrientation.portraitDown,
-      // ]),
-      runApp(MyApp())
-    };
+void main() => runApp(MyApp())
+    ;
 
 class MyApp extends StatelessWidget {
   @override
