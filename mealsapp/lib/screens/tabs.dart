@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:mealsapp/screens/categories.dart';
-import 'package:mealsapp/screens/filters.dart';
-import 'package:mealsapp/screens/meals.dart';
-import 'package:mealsapp/widgets/main_drawer.dart';
-import 'package:mealsapp/providers/favorites_provider.dart';
-import 'package:mealsapp/providers/filters_provider.dart';
+import 'package:meals/screens/categories.dart';
+import 'package:meals/screens/filters.dart';
+import 'package:meals/screens/meals.dart';
+import 'package:meals/widgets/main_drawer.dart';
+import 'package:meals/providers/favorites_provider.dart';
+import 'package:meals/providers/filters_provider.dart';
 
 const kInitialFilters = {
   Filter.glutenFree: false,
   Filter.lactoseFree: false,
   Filter.vegetarian: false,
-  Filter.vegan: false,
+  Filter.vegan: false
 };
 
 class TabsScreen extends ConsumerStatefulWidget {
@@ -26,7 +26,6 @@ class TabsScreen extends ConsumerStatefulWidget {
 
 class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
-
 
   void _selectPage(int index) {
     setState(() {
@@ -47,7 +46,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final availableMeals = ref.read(filteredMealsProvider);
+    final availableMeals = ref.watch(filteredMealsProvider);
 
     Widget activePage = CategoriesScreen(
       availableMeals: availableMeals,

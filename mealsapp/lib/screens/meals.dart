@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:mealsapp/models/meal.dart';
-import 'package:mealsapp/screens/meals_details.dart';
-import 'package:mealsapp/widgets/meal_item.dart';
+import 'package:meals/models/meal.dart';
+import 'package:meals/screens/meal_details.dart';
+import 'package:meals/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
   const MealsScreen({
@@ -31,7 +31,7 @@ class MealsScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Uh oh... nothing here!',
+            'Uh oh ... nothing here!',
             style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
@@ -42,7 +42,7 @@ class MealsScreen extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
-          )
+          ),
         ],
       ),
     );
