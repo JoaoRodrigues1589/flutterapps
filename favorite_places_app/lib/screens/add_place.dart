@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:favorite_places_app/providers/user_places.dart';
-
+import 'package:favorite_places/providers/user_places.dart';
 
 class AddPlaceScreen extends ConsumerStatefulWidget {
   const AddPlaceScreen({super.key});
@@ -37,28 +36,29 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Add new Place'),
-        ),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            children: [
-              TextField(
-                decoration: const InputDecoration(labelText: 'Title'),
-                controller: _titleController,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onBackground,
-                ),
+      appBar: AppBar(
+        title: const Text('Add new Place'),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          children: [
+            TextField(
+              decoration: const InputDecoration(labelText: 'Title'),
+              controller: _titleController,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onBackground,
               ),
-              const SizedBox(height: 16),
-              ElevatedButton.icon(
-                onPressed: _savePlace,
-                icon: const Icon(Icons.add),
-                label: const Text('Add Place'),
-              )
-            ],
-          ),
-        ));
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton.icon(
+              onPressed: _savePlace,
+              icon: const Icon(Icons.add),
+              label: const Text('Add Place'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
