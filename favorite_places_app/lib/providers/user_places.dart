@@ -28,14 +28,17 @@ class UserPlacesNotifier extends StateNotifier<List<Place>> {
       },
       version: 1,
     );
-    db.insert('user_palces', {
-      'id': newPlace.id,
-      'title': newPlace.title,
-      'image': newPlace.image.path,
-      'lat': newPlace.location.latitude,
-      'lng': newPlace.location.longitude,
-      'address': newPlace.location.address,
-    });
+    db.insert(
+      'user_palces',
+      {
+        'id': newPlace.id,
+        'title': newPlace.title,
+        'image': newPlace.image.path,
+        'lat': newPlace.location.latitude,
+        'lng': newPlace.location.longitude,
+        'address': newPlace.location.address,
+      },
+    );
 
     state = [newPlace, ...state];
   }
